@@ -1,1 +1,9 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+The asynchronous function sum2DArray defines a Promise object, 
+resolving or rejecting based on input. If the input is not an array, 
+it's rejected and handled by the catch block. For arrays, the sum is 
+calculated asynchronously with a timeout, placing calculations in the event loop. 
+After the main thread finishes, the error result is obtained, followed by the 
+sum output. Adding a "then" block partially moves the operation off the main 
+thread but not entirely onto the event loop.
